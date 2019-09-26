@@ -1,0 +1,41 @@
+{
+  "name": "synergy-loyalty-app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "engines": {
+    "node": "10.16.3",
+    "npm": "6.11.3",
+    "npx": "6.11.3"
+  },
+  "scripts": {
+    "test": "ci/run.sh",
+    "testnet": "npx ganache-cli -m 'decide favorite fiber music remain fold valid wash merge mechanic health spray'",
+    "lint": "npx solhint contracts/**/*.sol"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/synaphea/contracts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/synaphea/contracts#readme",
+  "devDependencies": {
+    "ganache-cli": "6.7.0",
+    "solc": "0.5.11",
+    "solhint": "2.2.0",
+    "solium": "1.2.5",
+    "truffle": "5.0.37"
+  },
+  "dependencies": {
+    "eth-gas-reporter": "0.2.11",
+    "eth-sig-util": "1.4.2",
+    "truffle-hdwallet-provider": "1.0.17",
+    "web3-eth": "1.2.1",
+    "winston": "3.2.1",
+    "zeppelin-solidity": "1.12.0"
+  }
+}
