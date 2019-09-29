@@ -36,6 +36,6 @@
     "truffle-hdwallet-provider": "1.0.17",
     "web3-eth": "1.2.1",
     "winston": "3.2.1",
-    "zeppelin-solidity": "1.12.0"
+    "zeppelin-solidity": "^1.12.0"
   }
 }

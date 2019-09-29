@@ -1,71 +1,64 @@
-pragma solidity 0.5.8;
+pragma solidity >=0.5.8 <0.6.0;
 
-contract LoyaltyPoints {
+import './PointsTokenStorage.sol';
 
-    // model a member
-    struct Member {
-        address memberAddress;
-        string firstName;
-        string lastName;
-        string email;
-        uint points;
-        bool isRegistered;
+
+contract LoyaltyPoints is PointsTokenStorage {
+
+    function initialized() public view returns (bool) {
+        return boolStorage[keccak256('loyalty_points_initialized')];
     }
 
-    // model a partner
-    struct Partner {
-        address partnerAddress;
-        string name;
-        bool isRegistered;
+    function initialize(address newAdministrator) public {
+        require(!initialized(), 'Initialization already executed');
+        setAdministrator(newAdministrator);
+        boolStorage[keccak256('loyalty_points_initialized')] = true;
     }
 
-    // model points transaction
-    enum TransactionType { Earned, Redeemed }
-    struct PointsTransaction {
-        uint points;
-        TransactionType transactionType;
-        address memberAddress;
-        address partnerAddress;
+    function setAdministrator (address newAdministrator) public {
+        require(msg.sender == administrator, "This action is allowed only by System Administrator.");
+
+        administrator = newAdministrator;
     }
 
-    //members and partners on the network mapped with their address
-    mapping(address => Member) public members;
-    mapping(address => Partner) public partners;
-
-    //public transactions and partners information
-    Partner[] public partnersInfo;
-    PointsTransaction[] public transactionsInfo;
+    function registerMember () public {
+        registerMember(msg.sender);
+    }
 
     //register sender as member
-    function registerMember (string _firstName, string _lastName, string _email) public {
+    function registerMember (address member) public {
         //check msg.sender in existing members
-        require(!members[msg.sender].isRegistered, "Account already registered as Member");
+        require(!members[member].isRegistered, "Account already registered as Member");
 
         //check msg.sender in existing partners
-        require(!partners[msg.sender].isRegistered, "Account already registered as Partner");
+        require(!partners[member].isRegistered, "Account already registered as Partner");
 
         //add member account
-        members[msg.sender] = Member(msg.sender, _firstName, _lastName, _email, 0, true);
+        members[member] = Member(member, 0, true);
+    }
+
+    function registerPartner () public {
+        registerPartner(msg.sender);
     }
 
     //register sender as partner
-    function registerPartner (string _name) public {
+    function registerPartner (address partner) public {
         //check msg.sender in existing members
-        require(!members[msg.sender].isRegistered, "Account already registered as Member");
+        require(!members[partner].isRegistered, "Account already registered as Member");
 
         //check msg.sender in existing partners
-        require(!partners[msg.sender].isRegistered, "Account already registered as Partner");
+        require(!partners[partner].isRegistered, "Account already registered as Partner");
 
         //add partner account
-        partners[msg.sender] = Partner(msg.sender, _name, true);
+        partners[partner] = Partner(partner, true);
 
         //add partners info to be shared with members
-        partnersInfo.push(Partner(msg.sender, _name, true));
+        partnersInfo.push(Partner(partner, true));
 
     }
 
     //update member with points earned
-    function earnPoints (uint _points, address _partnerAddress ) public {
+    function earnPoints (uint _points, address _partnerAddress) public {
         // only member can call
         require(members[msg.sender].isRegistered, "Sender not registered as Member");
 

@@ -1,0 +1,576 @@
+{
+  "contractName": "UpgradeabilityStorage",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "implementation",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"implementation\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"This contract holds all the necessary state variables to support the upgrade functionality\\r\",\"methods\":{\"implementation()\":{\"details\":\"Tells the address of the current implementation\\r\",\"return\":\"address of the current implementation\\r\"},\"version()\":{\"details\":\"Tells the version name of the current implementation\\r\",\"return\":\"string representing the name of the current version\\r\"}},\"title\":\"UpgradeabilityStorage\\r\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/mnt/d/Documents/Projects/Synergy/Projects/synergy-loyalty-app/contracts/UpgradeabilityStorage.sol\":\"UpgradeabilityStorage\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mnt/d/Documents/Projects/Synergy/Projects/synergy-loyalty-app/contracts/UpgradeabilityStorage.sol\":{\"keccak256\":\"0xb278b0ecb57f585be9b08ff773825e686182d230600585ecbbdb747ac6218d44\",\"urls\":[\"bzzr://6219b14e8b5f01883cafe1cb8b34ba4f1528e000d39aa464d01f4320811d1a47\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610200806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806354fd4d501461003b5780635c60da1b146100be575b600080fd5b610043610108565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610083578082015181840152602081019050610068565b50505050905090810190601f1680156100b05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100c66101aa565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101a05780601f10610175576101008083540402835291602001916101a0565b820191906000526020600020905b81548152906001019060200180831161018357829003601f168201915b5050505050905090565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690509056fea165627a7a7230582086ff64818dc6c9689b6138aa6adf1f02f811a7a912d8dd91b9a798192e3c6f890029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c806354fd4d501461003b5780635c60da1b146100be575b600080fd5b610043610108565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610083578082015181840152602081019050610068565b50505050905090810190601f1680156100b05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100c66101aa565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101a05780601f10610175576101008083540402835291602001916101a0565b820191906000526020600020905b81548152906001019060200180831161018357829003601f168201915b5050505050905090565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690509056fea165627a7a7230582086ff64818dc6c9689b6138aa6adf1f02f811a7a912d8dd91b9a798192e3c6f890029",
+  "sourceMap": "178:645:8:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;178:645:8;;;;;;;",
+  "deployedSourceMap": "178:645:8:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;178:645:8;;;;;;;;;;;;;;;;;;;;;;;;518:83;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;518:83:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;729:91;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;518:83;558:13;587:8;580:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;518:83;:::o;729:91::-;776:7;799:15;;;;;;;;;;;792:22;;729:91;:::o",
+  "source": "pragma solidity >=0.5.8 <0.6.0;\r\n\r\n/**\r\n * @title UpgradeabilityStorage\r\n * @dev This contract holds all the necessary state variables to support the upgrade functionality\r\n */\r\ncontract UpgradeabilityStorage {\r\n  // Version name of the current implementation\r\n  string internal _version;\r\n\r\n  // Address of the current implementation\r\n  address internal _implementation;\r\n\r\n  /**\r\n  * @dev Tells the version name of the current implementation\r\n  * @return string representing the name of the current version\r\n  */\r\n  function version() public view returns (string memory) {\r\n    return _version;\r\n  }\r\n\r\n  /**\r\n  * @dev Tells the address of the current implementation\r\n  * @return address of the current implementation\r\n  */\r\n  function implementation() public view returns (address) {\r\n    return _implementation;\r\n  }\r\n}",
+  "sourcePath": "/mnt/d/Documents/Projects/Synergy/Projects/synergy-loyalty-app/contracts/UpgradeabilityStorage.sol",
+  "ast": {
+    "absolutePath": "/mnt/d/Documents/Projects/Synergy/Projects/synergy-loyalty-app/contracts/UpgradeabilityStorage.sol",
+    "exportedSymbols": {
+      "UpgradeabilityStorage": [
+        651
+      ]
+    },
+    "id": 652,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 630,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".8",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:8"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title UpgradeabilityStorage\r\n@dev This contract holds all the necessary state variables to support the upgrade functionality\r",
+        "fullyImplemented": true,
+        "id": 651,
+        "linearizedBaseContracts": [
+          651
+        ],
+        "name": "UpgradeabilityStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 632,
+            "name": "_version",
+            "nodeType": "VariableDeclaration",
+            "scope": 651,
+            "src": "263:24:8",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 631,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "263:6:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 634,
+            "name": "_implementation",
+            "nodeType": "VariableDeclaration",
+            "scope": 651,
+            "src": "338:32:8",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 633,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "338:7:8",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 641,
+              "nodeType": "Block",
+              "src": "573:28:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 639,
+                    "name": "_version",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 632,
+                    "src": "587:8:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 638,
+                  "id": 640,
+                  "nodeType": "Return",
+                  "src": "580:15:8"
+                }
+              ]
+            },
+            "documentation": "@dev Tells the version name of the current implementation\r\n@return string representing the name of the current version\r",
+            "id": 642,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "version",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 635,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "534:2:8"
+            },
+            "returnParameters": {
+              "id": 638,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 637,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 642,
+                  "src": "558:13:8",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 636,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "558:6:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "557:15:8"
+            },
+            "scope": 651,
+            "src": "518:83:8",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 649,
+              "nodeType": "Block",
+              "src": "785:35:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 647,
+                    "name": "_implementation",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 634,
+                    "src": "799:15:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 646,
+                  "id": 648,
+                  "nodeType": "Return",
+                  "src": "792:22:8"
+                }
+              ]
+            },
+            "documentation": "@dev Tells the address of the current implementation\r\n@return address of the current implementation\r",
+            "id": 650,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "implementation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 643,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "752:2:8"
+            },
+            "returnParameters": {
+              "id": 646,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 645,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 650,
+                  "src": "776:7:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 644,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "776:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "775:9:8"
+            },
+            "scope": 651,
+            "src": "729:91:8",
+            "stateMutability": "view",
+            "superFunction": 542,
+            "visibility": "public"
+          }
+        ],
+        "scope": 652,
+        "src": "178:645:8"
+      }
+    ],
+    "src": "0:823:8"
+  },
+  "legacyAST": {
+    "absolutePath": "/mnt/d/Documents/Projects/Synergy/Projects/synergy-loyalty-app/contracts/UpgradeabilityStorage.sol",
+    "exportedSymbols": {
+      "UpgradeabilityStorage": [
+        651
+      ]
+    },
+    "id": 652,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 630,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".8",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:8"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title UpgradeabilityStorage\r\n@dev This contract holds all the necessary state variables to support the upgrade functionality\r",
+        "fullyImplemented": true,
+        "id": 651,
+        "linearizedBaseContracts": [
+          651
+        ],
+        "name": "UpgradeabilityStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 632,
+            "name": "_version",
+            "nodeType": "VariableDeclaration",
+            "scope": 651,
+            "src": "263:24:8",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 631,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "263:6:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 634,
+            "name": "_implementation",
+            "nodeType": "VariableDeclaration",
+            "scope": 651,
+            "src": "338:32:8",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 633,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "338:7:8",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 641,
+              "nodeType": "Block",
+              "src": "573:28:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 639,
+                    "name": "_version",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 632,
+                    "src": "587:8:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 638,
+                  "id": 640,
+                  "nodeType": "Return",
+                  "src": "580:15:8"
+                }
+              ]
+            },
+            "documentation": "@dev Tells the version name of the current implementation\r\n@return string representing the name of the current version\r",
+            "id": 642,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "version",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 635,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "534:2:8"
+            },
+            "returnParameters": {
+              "id": 638,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 637,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 642,
+                  "src": "558:13:8",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 636,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "558:6:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "557:15:8"
+            },
+            "scope": 651,
+            "src": "518:83:8",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 649,
+              "nodeType": "Block",
+              "src": "785:35:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 647,
+                    "name": "_implementation",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 634,
+                    "src": "799:15:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 646,
+                  "id": 648,
+                  "nodeType": "Return",
+                  "src": "792:22:8"
+                }
+              ]
+            },
+            "documentation": "@dev Tells the address of the current implementation\r\n@return address of the current implementation\r",
+            "id": 650,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "implementation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 643,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "752:2:8"
+            },
+            "returnParameters": {
+              "id": 646,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 645,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 650,
+                  "src": "776:7:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 644,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "776:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "775:9:8"
+            },
+            "scope": 651,
+            "src": "729:91:8",
+            "stateMutability": "view",
+            "superFunction": 542,
+            "visibility": "public"
+          }
+        ],
+        "scope": 652,
+        "src": "178:645:8"
+      }
+    ],
+    "src": "0:823:8"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.16",
+  "updatedAt": "2019-09-29T00:01:31.943Z",
+  "devdoc": {
+    "details": "This contract holds all the necessary state variables to support the upgrade functionality\r",
+    "methods": {
+      "implementation()": {
+        "details": "Tells the address of the current implementation\r",
+        "return": "address of the current implementation\r"
+      },
+      "version()": {
+        "details": "Tells the version name of the current implementation\r",
+        "return": "string representing the name of the current version\r"
+      }
+    },
+    "title": "UpgradeabilityStorage\r"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
