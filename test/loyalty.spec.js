@@ -19,8 +19,8 @@ contract("Proxy", (accounts) => {
             })
 
             it('returns true', async function () {
-                const initialized = await loyalty.administrator();
-                assert.equal(initialized, true);
+                const initialized = await loyalty.owner();
+                assert.equal(initialized, accounts[0]);
             })
         })
     });

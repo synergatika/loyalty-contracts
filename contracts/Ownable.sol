@@ -27,7 +27,7 @@ contract Ownable is PointsTokenStorage {
    * @return the address of the owner
    */
   function owner() public view returns (address) {
-    return administrator;
+    return addressStorage[keccak256("owner")];
   }
 
   /**
@@ -44,6 +44,6 @@ contract Ownable is PointsTokenStorage {
    */
   function setOwner(address newOwner) internal {
     emit OwnershipTransferred(owner(), newOwner);
-    administrator = newOwner;
+    addressStorage[keccak256("owner")] = newOwner;
   }
 }

@@ -42,8 +42,6 @@ contract PointsTokenStorage {
 
     PointsTransaction[] public transactionsInfo;
 
-    address public administrator;
-
     // For future proposes
     mapping(bytes32 => bool) internal boolStorage;
 

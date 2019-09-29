@@ -1,9 +1,10 @@
 pragma solidity >=0.5.8 <0.6.0;
 
 import './PointsTokenStorage.sol';
+import './Ownable.sol';
 
 
-contract LoyaltyPoints is PointsTokenStorage {
+contract LoyaltyPoints is PointsTokenStorage, Ownable {
 
     function initialized() public view returns (bool) {
         return boolStorage[keccak256('loyalty_points_initialized')];
@@ -11,14 +12,8 @@ contract LoyaltyPoints is PointsTokenStorage {
 
     function initialize(address newAdministrator) public {
         require(!initialized(), 'Initialization already executed');
-        setAdministrator(newAdministrator);
+        setOwner(newAdministrator);
         boolStorage[keccak256('loyalty_points_initialized')] = true;
-    }
-
-    function setAdministrator (address newAdministrator) public {
-        require(msg.sender == administrator, "This action is allowed only by System Administrator.");
-
-        administrator = newAdministrator;
     }
 
     function registerMember () public {
