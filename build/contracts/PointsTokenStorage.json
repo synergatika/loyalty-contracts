@@ -104,41 +104,27 @@
       "payable": false,
       "stateMutability": "view",
       "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "administrator",
-      "outputs": [
-        {
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"members\",\"outputs\":[{\"name\":\"memberAddress\",\"type\":\"address\"},{\"name\":\"points\",\"type\":\"uint256\"},{\"name\":\"isRegistered\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"transactionsInfo\",\"outputs\":[{\"name\":\"points\",\"type\":\"uint256\"},{\"name\":\"transactionType\",\"type\":\"uint8\"},{\"name\":\"memberAddress\",\"type\":\"address\"},{\"name\":\"partnerAddress\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"partners\",\"outputs\":[{\"name\":\"partnerAddress\",\"type\":\"address\"},{\"name\":\"isRegistered\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"partnersInfo\",\"outputs\":[{\"name\":\"partnerAddress\",\"type\":\"address\"},{\"name\":\"isRegistered\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"administrator\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"This contract holds all the necessary state variables to carry out the storage of any contract.\\r\",\"methods\":{},\"title\":\"PointsTokenStorage\\r\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/mnt/d/Documents/Projects/Synergy/Projects/synergy-loyalty-app/contracts/PointsTokenStorage.sol\":\"PointsTokenStorage\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mnt/d/Documents/Projects/Synergy/Projects/synergy-loyalty-app/contracts/PointsTokenStorage.sol\":{\"keccak256\":\"0x250b856fc86e8c3abf2f732841a159516ab8719885ed0eb446857d096e277fee\",\"urls\":[\"bzzr://ecfeba8fdeddace95e3d1f7fb8fecd26bd7de8e3951d0b81f7ee43c1519ec5f5\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506104df806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806308ae4b0c1461005c578063674c7099146100f257806395c33652146101af578063d5763aea1461023e578063f53d0a8e146102b7575b600080fd5b61009e6004803603602081101561007257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610301565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200182151515158152602001935050505060405180910390f35b61011e6004803603602081101561010857600080fd5b8101908080359060200190929190505050610358565b6040518085815260200184600181111561013457fe5b60ff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200194505050505060405180910390f35b6101f1600480360360208110156101c557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103e2565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390f35b61026a6004803603602081101561025457600080fd5b8101908080359060200190929190505050610433565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390f35b6102bf61048d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60006020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020160009054906101000a900460ff16905083565b6003818154811061036557fe5b90600052602060002090600302016000915090508060000154908060010160009054906101000a900460ff16908060010160019054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905084565b60016020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060000160149054906101000a900460ff16905082565b6002818154811061044057fe5b906000526020600020016000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060000160149054906101000a900460ff16905082565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a72305820d2592f62794b9bfbe976e2957a99a1119972909a0534eee64cb2e554e0494d0f0029",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c806308ae4b0c1461005c578063674c7099146100f257806395c33652146101af578063d5763aea1461023e578063f53d0a8e146102b7575b600080fd5b61009e6004803603602081101561007257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610301565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200182151515158152602001935050505060405180910390f35b61011e6004803603602081101561010857600080fd5b8101908080359060200190929190505050610358565b6040518085815260200184600181111561013457fe5b60ff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200194505050505060405180910390f35b6101f1600480360360208110156101c557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103e2565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390f35b61026a6004803603602081101561025457600080fd5b8101908080359060200190929190505050610433565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390f35b6102bf61048d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60006020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020160009054906101000a900460ff16905083565b6003818154811061036557fe5b90600052602060002090600302016000915090508060000154908060010160009054906101000a900460ff16908060010160019054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905084565b60016020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060000160149054906101000a900460ff16905082565b6002818154811061044057fe5b906000526020600020016000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060000160149054906101000a900460ff16905082565b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea165627a7a72305820d2592f62794b9bfbe976e2957a99a1119972909a0534eee64cb2e554e0494d0f0029",
-  "sourceMap": "180:1273:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;180:1273:4;;;;;;;",
-  "deployedSourceMap": "180:1273:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;180:1273:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;809:41;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;809:41:4;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1001:43;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1001:43:4;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;859;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;859:43:4;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;963:29;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;963:29:4;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1053:28;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;809:41;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;1001:43::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;859:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;963:29::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;1053:28::-;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity >=0.5.8 <0.6.0;\r\n\r\n/**\r\n * @title PointsTokenStorage\r\n * @dev This contract holds all the necessary state variables to carry out the storage of any contract.\r\n */\r\ncontract PointsTokenStorage {\r\n\r\n // model a member\r\n    struct Member {\r\n        address memberAddress;\r\n        uint points;\r\n        bool isRegistered;\r\n    }\r\n\r\n    // model a partner\r\n    struct Partner {\r\n        address partnerAddress;\r\n        bool isRegistered;\r\n    }\r\n\r\n    // model points transaction\r\n    enum TransactionType {\r\n        Earned,\r\n        Redeemed\r\n    }\r\n\r\n    struct PointsTransaction {\r\n        uint points;\r\n        TransactionType transactionType;\r\n        address memberAddress;\r\n        address partnerAddress;\r\n    }\r\n\r\n    //members and partners on the network mapped with their address\r\n    mapping(address => Member) public members;\r\n\r\n    mapping(address => Partner) public partners;\r\n\r\n    //public transactions and partners information\r\n    Partner[] public partnersInfo;\r\n\r\n    PointsTransaction[] public transactionsInfo;\r\n\r\n    address public administrator;\r\n\r\n    // For future proposes\r\n    mapping(bytes32 => bool) internal boolStorage;\r\n\r\n    mapping(bytes32 => int256) internal intStorage;\r\n\r\n    mapping(bytes32 => bytes) internal bytesStorage;\r\n\r\n    mapping(bytes32 => uint256) internal uintStorage;\r\n\r\n    mapping(bytes32 => string) internal stringStorage;\r\n\r\n    mapping(bytes32 => address) internal addressStorage;\r\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"members\",\"outputs\":[{\"name\":\"memberAddress\",\"type\":\"address\"},{\"name\":\"points\",\"type\":\"uint256\"},{\"name\":\"isRegistered\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"transactionsInfo\",\"outputs\":[{\"name\":\"points\",\"type\":\"uint256\"},{\"name\":\"transactionType\",\"type\":\"uint8\"},{\"name\":\"memberAddress\",\"type\":\"address\"},{\"name\":\"partnerAddress\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"partners\",\"outputs\":[{\"name\":\"partnerAddress\",\"type\":\"address\"},{\"name\":\"isRegistered\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"partnersInfo\",\"outputs\":[{\"name\":\"partnerAddress\",\"type\":\"address\"},{\"name\":\"isRegistered\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"This contract holds all the necessary state variables to carry out the storage of any contract.\\r\",\"methods\":{},\"title\":\"PointsTokenStorage\\r\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/mnt/d/Documents/Projects/Synergy/Projects/synergy-loyalty-app/contracts/PointsTokenStorage.sol\":\"PointsTokenStorage\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/mnt/d/Documents/Projects/Synergy/Projects/synergy-loyalty-app/contracts/PointsTokenStorage.sol\":{\"keccak256\":\"0x00f0cc36c373f9e4640a250ddafa8240c486c72e692f4dc54f7e3a1da87ac83e\",\"urls\":[\"bzzr://8eb86e705af196e5fd58f9824ec38a83205ea62a4a469edbb5795b7284d2579b\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610464806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806308ae4b0c14610051578063674c7099146100e757806395c33652146101a4578063d5763aea14610233575b600080fd5b6100936004803603602081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102ac565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200182151515158152602001935050505060405180910390f35b610113600480360360208110156100fd57600080fd5b8101908080359060200190929190505050610303565b6040518085815260200184600181111561012957fe5b60ff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200194505050505060405180910390f35b6101e6600480360360208110156101ba57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061038d565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390f35b61025f6004803603602081101561024957600080fd5b81019080803590602001909291905050506103de565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390f35b60006020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020160009054906101000a900460ff16905083565b6003818154811061031057fe5b90600052602060002090600302016000915090508060000154908060010160009054906101000a900460ff16908060010160019054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905084565b60016020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060000160149054906101000a900460ff16905082565b600281815481106103eb57fe5b906000526020600020016000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060000160149054906101000a900460ff1690508256fea165627a7a72305820ce58b93f8631fc4900f9e0d5f124d272ffb4613e37671705d928f7dd66e6c0d50029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806308ae4b0c14610051578063674c7099146100e757806395c33652146101a4578063d5763aea14610233575b600080fd5b6100936004803603602081101561006757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102ac565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183815260200182151515158152602001935050505060405180910390f35b610113600480360360208110156100fd57600080fd5b8101908080359060200190929190505050610303565b6040518085815260200184600181111561012957fe5b60ff1681526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200194505050505060405180910390f35b6101e6600480360360208110156101ba57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061038d565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390f35b61025f6004803603602081101561024957600080fd5b81019080803590602001909291905050506103de565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390f35b60006020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060010154908060020160009054906101000a900460ff16905083565b6003818154811061031057fe5b90600052602060002090600302016000915090508060000154908060010160009054906101000a900460ff16908060010160019054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060020160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905084565b60016020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060000160149054906101000a900460ff16905082565b600281815481106103eb57fe5b906000526020600020016000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060000160149054906101000a900460ff1690508256fea165627a7a72305820ce58b93f8631fc4900f9e0d5f124d272ffb4613e37671705d928f7dd66e6c0d50029",
+  "sourceMap": "180:1236:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;180:1236:4;;;;;;;",
+  "deployedSourceMap": "180:1236:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;180:1236:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;809:41;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;809:41:4;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1001:43;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1001:43:4;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;859;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;859:43:4;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;963:29;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;963:29:4;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;809:41;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;1001:43::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;859:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;963:29::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.5.8 <0.6.0;\r\n\r\n/**\r\n * @title PointsTokenStorage\r\n * @dev This contract holds all the necessary state variables to carry out the storage of any contract.\r\n */\r\ncontract PointsTokenStorage {\r\n\r\n // model a member\r\n    struct Member {\r\n        address memberAddress;\r\n        uint points;\r\n        bool isRegistered;\r\n    }\r\n\r\n    // model a partner\r\n    struct Partner {\r\n        address partnerAddress;\r\n        bool isRegistered;\r\n    }\r\n\r\n    // model points transaction\r\n    enum TransactionType {\r\n        Earned,\r\n        Redeemed\r\n    }\r\n\r\n    struct PointsTransaction {\r\n        uint points;\r\n        TransactionType transactionType;\r\n        address memberAddress;\r\n        address partnerAddress;\r\n    }\r\n\r\n    //members and partners on the network mapped with their address\r\n    mapping(address => Member) public members;\r\n\r\n    mapping(address => Partner) public partners;\r\n\r\n    //public transactions and partners information\r\n    Partner[] public partnersInfo;\r\n\r\n    PointsTransaction[] public transactionsInfo;\r\n\r\n    // For future proposes\r\n    mapping(bytes32 => bool) internal boolStorage;\r\n\r\n    mapping(bytes32 => int256) internal intStorage;\r\n\r\n    mapping(bytes32 => bytes) internal bytesStorage;\r\n\r\n    mapping(bytes32 => uint256) internal uintStorage;\r\n\r\n    mapping(bytes32 => string) internal stringStorage;\r\n\r\n    mapping(bytes32 => address) internal addressStorage;\r\n}",
   "sourcePath": "/mnt/d/Documents/Projects/Synergy/Projects/synergy-loyalty-app/contracts/PointsTokenStorage.sol",
   "ast": {
     "absolutePath": "/mnt/d/Documents/Projects/Synergy/Projects/synergy-loyalty-app/contracts/PointsTokenStorage.sol",
     "exportedSymbols": {
       "PointsTokenStorage": [
-        613
+        604
       ]
     },
-    "id": 614,
+    "id": 605,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 548,
+        "id": 541,
         "literals": [
           "solidity",
           ">=",
@@ -157,23 +143,23 @@
         "contractKind": "contract",
         "documentation": "@title PointsTokenStorage\r\n@dev This contract holds all the necessary state variables to carry out the storage of any contract.\r",
         "fullyImplemented": true,
-        "id": 613,
+        "id": 604,
         "linearizedBaseContracts": [
-          613
+          604
         ],
         "name": "PointsTokenStorage",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "PointsTokenStorage.Member",
-            "id": 555,
+            "id": 548,
             "members": [
               {
                 "constant": false,
-                "id": 550,
+                "id": 543,
                 "name": "memberAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 555,
+                "scope": 548,
                 "src": "262:21:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -182,7 +168,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 549,
+                  "id": 542,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "262:7:4",
@@ -197,10 +183,10 @@
               },
               {
                 "constant": false,
-                "id": 552,
+                "id": 545,
                 "name": "points",
                 "nodeType": "VariableDeclaration",
-                "scope": 555,
+                "scope": 548,
                 "src": "294:11:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -209,7 +195,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 551,
+                  "id": 544,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "294:4:4",
@@ -223,10 +209,10 @@
               },
               {
                 "constant": false,
-                "id": 554,
+                "id": 547,
                 "name": "isRegistered",
                 "nodeType": "VariableDeclaration",
-                "scope": 555,
+                "scope": 548,
                 "src": "316:17:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -235,7 +221,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 553,
+                  "id": 546,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "316:4:4",
@@ -250,20 +236,20 @@
             ],
             "name": "Member",
             "nodeType": "StructDefinition",
-            "scope": 613,
+            "scope": 604,
             "src": "237:104:4",
             "visibility": "public"
           },
           {
             "canonicalName": "PointsTokenStorage.Partner",
-            "id": 560,
+            "id": 553,
             "members": [
               {
                 "constant": false,
-                "id": 557,
+                "id": 550,
                 "name": "partnerAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 560,
+                "scope": 553,
                 "src": "399:22:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -272,7 +258,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 556,
+                  "id": 549,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "399:7:4",
@@ -287,10 +273,10 @@
               },
               {
                 "constant": false,
-                "id": 559,
+                "id": 552,
                 "name": "isRegistered",
                 "nodeType": "VariableDeclaration",
-                "scope": 560,
+                "scope": 553,
                 "src": "432:17:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -299,7 +285,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 558,
+                  "id": 551,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "432:4:4",
@@ -314,22 +300,22 @@
             ],
             "name": "Partner",
             "nodeType": "StructDefinition",
-            "scope": 613,
+            "scope": 604,
             "src": "373:84:4",
             "visibility": "public"
           },
           {
             "canonicalName": "PointsTokenStorage.TransactionType",
-            "id": 563,
+            "id": 556,
             "members": [
               {
-                "id": 561,
+                "id": 554,
                 "name": "Earned",
                 "nodeType": "EnumValue",
                 "src": "530:6:4"
               },
               {
-                "id": 562,
+                "id": 555,
                 "name": "Redeemed",
                 "nodeType": "EnumValue",
                 "src": "547:8:4"
@@ -341,14 +327,14 @@
           },
           {
             "canonicalName": "PointsTokenStorage.PointsTransaction",
-            "id": 572,
+            "id": 565,
             "members": [
               {
                 "constant": false,
-                "id": 565,
+                "id": 558,
                 "name": "points",
                 "nodeType": "VariableDeclaration",
-                "scope": 572,
+                "scope": 565,
                 "src": "606:11:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -357,7 +343,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 564,
+                  "id": 557,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "606:4:4",
@@ -371,26 +357,26 @@
               },
               {
                 "constant": false,
-                "id": 567,
+                "id": 560,
                 "name": "transactionType",
                 "nodeType": "VariableDeclaration",
-                "scope": 572,
+                "scope": 565,
                 "src": "628:31:4",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_enum$_TransactionType_$563",
+                  "typeIdentifier": "t_enum$_TransactionType_$556",
                   "typeString": "enum PointsTokenStorage.TransactionType"
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 566,
+                  "id": 559,
                   "name": "TransactionType",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 563,
+                  "referencedDeclaration": 556,
                   "src": "628:15:4",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_TransactionType_$563",
+                    "typeIdentifier": "t_enum$_TransactionType_$556",
                     "typeString": "enum PointsTokenStorage.TransactionType"
                   }
                 },
@@ -399,10 +385,10 @@
               },
               {
                 "constant": false,
-                "id": 569,
+                "id": 562,
                 "name": "memberAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 572,
+                "scope": 565,
                 "src": "670:21:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -411,7 +397,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 568,
+                  "id": 561,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "670:7:4",
@@ -426,10 +412,10 @@
               },
               {
                 "constant": false,
-                "id": 571,
+                "id": 564,
                 "name": "partnerAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 572,
+                "scope": 565,
                 "src": "702:22:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -438,7 +424,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 570,
+                  "id": 563,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "702:7:4",
@@ -454,27 +440,27 @@
             ],
             "name": "PointsTransaction",
             "nodeType": "StructDefinition",
-            "scope": 613,
+            "scope": 604,
             "src": "570:162:4",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 576,
+            "id": 569,
             "name": "members",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
+            "scope": 604,
             "src": "809:41:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Member_$555_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Member_$548_storage_$",
               "typeString": "mapping(address => struct PointsTokenStorage.Member)"
             },
             "typeName": {
-              "id": 575,
+              "id": 568,
               "keyType": {
-                "id": 573,
+                "id": 566,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "817:7:4",
@@ -486,18 +472,18 @@
               "nodeType": "Mapping",
               "src": "809:26:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Member_$555_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Member_$548_storage_$",
                 "typeString": "mapping(address => struct PointsTokenStorage.Member)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 574,
+                "id": 567,
                 "name": "Member",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 555,
+                "referencedDeclaration": 548,
                 "src": "828:6:4",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Member_$555_storage_ptr",
+                  "typeIdentifier": "t_struct$_Member_$548_storage_ptr",
                   "typeString": "struct PointsTokenStorage.Member"
                 }
               }
@@ -507,21 +493,21 @@
           },
           {
             "constant": false,
-            "id": 580,
+            "id": 573,
             "name": "partners",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
+            "scope": 604,
             "src": "859:43:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Partner_$560_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Partner_$553_storage_$",
               "typeString": "mapping(address => struct PointsTokenStorage.Partner)"
             },
             "typeName": {
-              "id": 579,
+              "id": 572,
               "keyType": {
-                "id": 577,
+                "id": 570,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "867:7:4",
@@ -533,18 +519,18 @@
               "nodeType": "Mapping",
               "src": "859:27:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Partner_$560_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Partner_$553_storage_$",
                 "typeString": "mapping(address => struct PointsTokenStorage.Partner)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 578,
+                "id": 571,
                 "name": "Partner",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 560,
+                "referencedDeclaration": 553,
                 "src": "878:7:4",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Partner_$560_storage_ptr",
+                  "typeIdentifier": "t_struct$_Partner_$553_storage_ptr",
                   "typeString": "struct PointsTokenStorage.Partner"
                 }
               }
@@ -554,36 +540,36 @@
           },
           {
             "constant": false,
-            "id": 583,
+            "id": 576,
             "name": "partnersInfo",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
+            "scope": 604,
             "src": "963:29:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_Partner_$560_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_Partner_$553_storage_$dyn_storage",
               "typeString": "struct PointsTokenStorage.Partner[]"
             },
             "typeName": {
               "baseType": {
                 "contractScope": null,
-                "id": 581,
+                "id": 574,
                 "name": "Partner",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 560,
+                "referencedDeclaration": 553,
                 "src": "963:7:4",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Partner_$560_storage_ptr",
+                  "typeIdentifier": "t_struct$_Partner_$553_storage_ptr",
                   "typeString": "struct PointsTokenStorage.Partner"
                 }
               },
-              "id": 582,
+              "id": 575,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "963:9:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_Partner_$560_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_Partner_$553_storage_$dyn_storage_ptr",
                 "typeString": "struct PointsTokenStorage.Partner[]"
               }
             },
@@ -592,36 +578,36 @@
           },
           {
             "constant": false,
-            "id": 586,
+            "id": 579,
             "name": "transactionsInfo",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
+            "scope": 604,
             "src": "1001:43:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_PointsTransaction_$572_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_PointsTransaction_$565_storage_$dyn_storage",
               "typeString": "struct PointsTokenStorage.PointsTransaction[]"
             },
             "typeName": {
               "baseType": {
                 "contractScope": null,
-                "id": 584,
+                "id": 577,
                 "name": "PointsTransaction",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 572,
+                "referencedDeclaration": 565,
                 "src": "1001:17:4",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_PointsTransaction_$572_storage_ptr",
+                  "typeIdentifier": "t_struct$_PointsTransaction_$565_storage_ptr",
                   "typeString": "struct PointsTokenStorage.PointsTransaction"
                 }
               },
-              "id": 585,
+              "id": 578,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "1001:19:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_PointsTransaction_$572_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_PointsTransaction_$565_storage_$dyn_storage_ptr",
                 "typeString": "struct PointsTokenStorage.PointsTransaction[]"
               }
             },
@@ -630,38 +616,11 @@
           },
           {
             "constant": false,
-            "id": 588,
-            "name": "administrator",
-            "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1053:28:4",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_address",
-              "typeString": "address"
-            },
-            "typeName": {
-              "id": 587,
-              "name": "address",
-              "nodeType": "ElementaryTypeName",
-              "src": "1053:7:4",
-              "stateMutability": "nonpayable",
-              "typeDescriptions": {
-                "typeIdentifier": "t_address",
-                "typeString": "address"
-              }
-            },
-            "value": null,
-            "visibility": "public"
-          },
-          {
-            "constant": false,
-            "id": 592,
+            "id": 583,
             "name": "boolStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1118:45:4",
+            "scope": 604,
+            "src": "1081:45:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -669,28 +628,28 @@
               "typeString": "mapping(bytes32 => bool)"
             },
             "typeName": {
-              "id": 591,
+              "id": 582,
               "keyType": {
-                "id": 589,
+                "id": 580,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "1126:7:4",
+                "src": "1089:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "1118:24:4",
+              "src": "1081:24:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
                 "typeString": "mapping(bytes32 => bool)"
               },
               "valueType": {
-                "id": 590,
+                "id": 581,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "1137:4:4",
+                "src": "1100:4:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -702,11 +661,11 @@
           },
           {
             "constant": false,
-            "id": 596,
+            "id": 587,
             "name": "intStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1172:46:4",
+            "scope": 604,
+            "src": "1135:46:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -714,28 +673,28 @@
               "typeString": "mapping(bytes32 => int256)"
             },
             "typeName": {
-              "id": 595,
+              "id": 586,
               "keyType": {
-                "id": 593,
+                "id": 584,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "1180:7:4",
+                "src": "1143:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "1172:26:4",
+              "src": "1135:26:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_int256_$",
                 "typeString": "mapping(bytes32 => int256)"
               },
               "valueType": {
-                "id": 594,
+                "id": 585,
                 "name": "int256",
                 "nodeType": "ElementaryTypeName",
-                "src": "1191:6:4",
+                "src": "1154:6:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_int256",
                   "typeString": "int256"
@@ -747,11 +706,11 @@
           },
           {
             "constant": false,
-            "id": 600,
+            "id": 591,
             "name": "bytesStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1227:47:4",
+            "scope": 604,
+            "src": "1190:47:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -759,28 +718,28 @@
               "typeString": "mapping(bytes32 => bytes)"
             },
             "typeName": {
-              "id": 599,
+              "id": 590,
               "keyType": {
-                "id": 597,
+                "id": 588,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "1235:7:4",
+                "src": "1198:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "1227:25:4",
+              "src": "1190:25:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_bytes_storage_$",
                 "typeString": "mapping(bytes32 => bytes)"
               },
               "valueType": {
-                "id": 598,
+                "id": 589,
                 "name": "bytes",
                 "nodeType": "ElementaryTypeName",
-                "src": "1246:5:4",
+                "src": "1209:5:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes_storage_ptr",
                   "typeString": "bytes"
@@ -792,11 +751,11 @@
           },
           {
             "constant": false,
-            "id": 604,
+            "id": 595,
             "name": "uintStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1283:48:4",
+            "scope": 604,
+            "src": "1246:48:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -804,28 +763,28 @@
               "typeString": "mapping(bytes32 => uint256)"
             },
             "typeName": {
-              "id": 603,
+              "id": 594,
               "keyType": {
-                "id": 601,
+                "id": 592,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "1291:7:4",
+                "src": "1254:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "1283:27:4",
+              "src": "1246:27:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
                 "typeString": "mapping(bytes32 => uint256)"
               },
               "valueType": {
-                "id": 602,
+                "id": 593,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
-                "src": "1302:7:4",
+                "src": "1265:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -837,11 +796,11 @@
           },
           {
             "constant": false,
-            "id": 608,
+            "id": 599,
             "name": "stringStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1340:49:4",
+            "scope": 604,
+            "src": "1303:49:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -849,28 +808,28 @@
               "typeString": "mapping(bytes32 => string)"
             },
             "typeName": {
-              "id": 607,
+              "id": 598,
               "keyType": {
-                "id": 605,
+                "id": 596,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "1348:7:4",
+                "src": "1311:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "1340:26:4",
+              "src": "1303:26:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_string_storage_$",
                 "typeString": "mapping(bytes32 => string)"
               },
               "valueType": {
-                "id": 606,
+                "id": 597,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "1359:6:4",
+                "src": "1322:6:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
@@ -882,11 +841,11 @@
           },
           {
             "constant": false,
-            "id": 612,
+            "id": 603,
             "name": "addressStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1398:51:4",
+            "scope": 604,
+            "src": "1361:51:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -894,28 +853,28 @@
               "typeString": "mapping(bytes32 => address)"
             },
             "typeName": {
-              "id": 611,
+              "id": 602,
               "keyType": {
-                "id": 609,
+                "id": 600,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "1406:7:4",
+                "src": "1369:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "1398:27:4",
+              "src": "1361:27:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
                 "typeString": "mapping(bytes32 => address)"
               },
               "valueType": {
-                "id": 610,
+                "id": 601,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "1417:7:4",
+                "src": "1380:7:4",
                 "stateMutability": "nonpayable",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
@@ -927,24 +886,24 @@
             "visibility": "internal"
           }
         ],
-        "scope": 614,
-        "src": "180:1273:4"
+        "scope": 605,
+        "src": "180:1236:4"
       }
     ],
-    "src": "0:1453:4"
+    "src": "0:1416:4"
   },
   "legacyAST": {
     "absolutePath": "/mnt/d/Documents/Projects/Synergy/Projects/synergy-loyalty-app/contracts/PointsTokenStorage.sol",
     "exportedSymbols": {
       "PointsTokenStorage": [
-        613
+        604
       ]
     },
-    "id": 614,
+    "id": 605,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 548,
+        "id": 541,
         "literals": [
           "solidity",
           ">=",
@@ -963,23 +922,23 @@
         "contractKind": "contract",
         "documentation": "@title PointsTokenStorage\r\n@dev This contract holds all the necessary state variables to carry out the storage of any contract.\r",
         "fullyImplemented": true,
-        "id": 613,
+        "id": 604,
         "linearizedBaseContracts": [
-          613
+          604
         ],
         "name": "PointsTokenStorage",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "PointsTokenStorage.Member",
-            "id": 555,
+            "id": 548,
             "members": [
               {
                 "constant": false,
-                "id": 550,
+                "id": 543,
                 "name": "memberAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 555,
+                "scope": 548,
                 "src": "262:21:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -988,7 +947,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 549,
+                  "id": 542,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "262:7:4",
@@ -1003,10 +962,10 @@
               },
               {
                 "constant": false,
-                "id": 552,
+                "id": 545,
                 "name": "points",
                 "nodeType": "VariableDeclaration",
-                "scope": 555,
+                "scope": 548,
                 "src": "294:11:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1015,7 +974,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 551,
+                  "id": 544,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "294:4:4",
@@ -1029,10 +988,10 @@
               },
               {
                 "constant": false,
-                "id": 554,
+                "id": 547,
                 "name": "isRegistered",
                 "nodeType": "VariableDeclaration",
-                "scope": 555,
+                "scope": 548,
                 "src": "316:17:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1041,7 +1000,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 553,
+                  "id": 546,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "316:4:4",
@@ -1056,20 +1015,20 @@
             ],
             "name": "Member",
             "nodeType": "StructDefinition",
-            "scope": 613,
+            "scope": 604,
             "src": "237:104:4",
             "visibility": "public"
           },
           {
             "canonicalName": "PointsTokenStorage.Partner",
-            "id": 560,
+            "id": 553,
             "members": [
               {
                 "constant": false,
-                "id": 557,
+                "id": 550,
                 "name": "partnerAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 560,
+                "scope": 553,
                 "src": "399:22:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1078,7 +1037,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 556,
+                  "id": 549,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "399:7:4",
@@ -1093,10 +1052,10 @@
               },
               {
                 "constant": false,
-                "id": 559,
+                "id": 552,
                 "name": "isRegistered",
                 "nodeType": "VariableDeclaration",
-                "scope": 560,
+                "scope": 553,
                 "src": "432:17:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1105,7 +1064,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 558,
+                  "id": 551,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "432:4:4",
@@ -1120,22 +1079,22 @@
             ],
             "name": "Partner",
             "nodeType": "StructDefinition",
-            "scope": 613,
+            "scope": 604,
             "src": "373:84:4",
             "visibility": "public"
           },
           {
             "canonicalName": "PointsTokenStorage.TransactionType",
-            "id": 563,
+            "id": 556,
             "members": [
               {
-                "id": 561,
+                "id": 554,
                 "name": "Earned",
                 "nodeType": "EnumValue",
                 "src": "530:6:4"
               },
               {
-                "id": 562,
+                "id": 555,
                 "name": "Redeemed",
                 "nodeType": "EnumValue",
                 "src": "547:8:4"
@@ -1147,14 +1106,14 @@
           },
           {
             "canonicalName": "PointsTokenStorage.PointsTransaction",
-            "id": 572,
+            "id": 565,
             "members": [
               {
                 "constant": false,
-                "id": 565,
+                "id": 558,
                 "name": "points",
                 "nodeType": "VariableDeclaration",
-                "scope": 572,
+                "scope": 565,
                 "src": "606:11:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1163,7 +1122,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 564,
+                  "id": 557,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "606:4:4",
@@ -1177,26 +1136,26 @@
               },
               {
                 "constant": false,
-                "id": 567,
+                "id": 560,
                 "name": "transactionType",
                 "nodeType": "VariableDeclaration",
-                "scope": 572,
+                "scope": 565,
                 "src": "628:31:4",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_enum$_TransactionType_$563",
+                  "typeIdentifier": "t_enum$_TransactionType_$556",
                   "typeString": "enum PointsTokenStorage.TransactionType"
                 },
                 "typeName": {
                   "contractScope": null,
-                  "id": 566,
+                  "id": 559,
                   "name": "TransactionType",
                   "nodeType": "UserDefinedTypeName",
-                  "referencedDeclaration": 563,
+                  "referencedDeclaration": 556,
                   "src": "628:15:4",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_TransactionType_$563",
+                    "typeIdentifier": "t_enum$_TransactionType_$556",
                     "typeString": "enum PointsTokenStorage.TransactionType"
                   }
                 },
@@ -1205,10 +1164,10 @@
               },
               {
                 "constant": false,
-                "id": 569,
+                "id": 562,
                 "name": "memberAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 572,
+                "scope": 565,
                 "src": "670:21:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1217,7 +1176,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 568,
+                  "id": 561,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "670:7:4",
@@ -1232,10 +1191,10 @@
               },
               {
                 "constant": false,
-                "id": 571,
+                "id": 564,
                 "name": "partnerAddress",
                 "nodeType": "VariableDeclaration",
-                "scope": 572,
+                "scope": 565,
                 "src": "702:22:4",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1244,7 +1203,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 570,
+                  "id": 563,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "702:7:4",
@@ -1260,27 +1219,27 @@
             ],
             "name": "PointsTransaction",
             "nodeType": "StructDefinition",
-            "scope": 613,
+            "scope": 604,
             "src": "570:162:4",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 576,
+            "id": 569,
             "name": "members",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
+            "scope": 604,
             "src": "809:41:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Member_$555_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Member_$548_storage_$",
               "typeString": "mapping(address => struct PointsTokenStorage.Member)"
             },
             "typeName": {
-              "id": 575,
+              "id": 568,
               "keyType": {
-                "id": 573,
+                "id": 566,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "817:7:4",
@@ -1292,18 +1251,18 @@
               "nodeType": "Mapping",
               "src": "809:26:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Member_$555_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Member_$548_storage_$",
                 "typeString": "mapping(address => struct PointsTokenStorage.Member)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 574,
+                "id": 567,
                 "name": "Member",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 555,
+                "referencedDeclaration": 548,
                 "src": "828:6:4",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Member_$555_storage_ptr",
+                  "typeIdentifier": "t_struct$_Member_$548_storage_ptr",
                   "typeString": "struct PointsTokenStorage.Member"
                 }
               }
@@ -1313,21 +1272,21 @@
           },
           {
             "constant": false,
-            "id": 580,
+            "id": 573,
             "name": "partners",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
+            "scope": 604,
             "src": "859:43:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Partner_$560_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Partner_$553_storage_$",
               "typeString": "mapping(address => struct PointsTokenStorage.Partner)"
             },
             "typeName": {
-              "id": 579,
+              "id": 572,
               "keyType": {
-                "id": 577,
+                "id": 570,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "867:7:4",
@@ -1339,18 +1298,18 @@
               "nodeType": "Mapping",
               "src": "859:27:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Partner_$560_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Partner_$553_storage_$",
                 "typeString": "mapping(address => struct PointsTokenStorage.Partner)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 578,
+                "id": 571,
                 "name": "Partner",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 560,
+                "referencedDeclaration": 553,
                 "src": "878:7:4",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Partner_$560_storage_ptr",
+                  "typeIdentifier": "t_struct$_Partner_$553_storage_ptr",
                   "typeString": "struct PointsTokenStorage.Partner"
                 }
               }
@@ -1360,36 +1319,36 @@
           },
           {
             "constant": false,
-            "id": 583,
+            "id": 576,
             "name": "partnersInfo",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
+            "scope": 604,
             "src": "963:29:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_Partner_$560_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_Partner_$553_storage_$dyn_storage",
               "typeString": "struct PointsTokenStorage.Partner[]"
             },
             "typeName": {
               "baseType": {
                 "contractScope": null,
-                "id": 581,
+                "id": 574,
                 "name": "Partner",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 560,
+                "referencedDeclaration": 553,
                 "src": "963:7:4",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Partner_$560_storage_ptr",
+                  "typeIdentifier": "t_struct$_Partner_$553_storage_ptr",
                   "typeString": "struct PointsTokenStorage.Partner"
                 }
               },
-              "id": 582,
+              "id": 575,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "963:9:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_Partner_$560_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_Partner_$553_storage_$dyn_storage_ptr",
                 "typeString": "struct PointsTokenStorage.Partner[]"
               }
             },
@@ -1398,36 +1357,36 @@
           },
           {
             "constant": false,
-            "id": 586,
+            "id": 579,
             "name": "transactionsInfo",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
+            "scope": 604,
             "src": "1001:43:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_struct$_PointsTransaction_$572_storage_$dyn_storage",
+              "typeIdentifier": "t_array$_t_struct$_PointsTransaction_$565_storage_$dyn_storage",
               "typeString": "struct PointsTokenStorage.PointsTransaction[]"
             },
             "typeName": {
               "baseType": {
                 "contractScope": null,
-                "id": 584,
+                "id": 577,
                 "name": "PointsTransaction",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 572,
+                "referencedDeclaration": 565,
                 "src": "1001:17:4",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_PointsTransaction_$572_storage_ptr",
+                  "typeIdentifier": "t_struct$_PointsTransaction_$565_storage_ptr",
                   "typeString": "struct PointsTokenStorage.PointsTransaction"
                 }
               },
-              "id": 585,
+              "id": 578,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "1001:19:4",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_struct$_PointsTransaction_$572_storage_$dyn_storage_ptr",
+                "typeIdentifier": "t_array$_t_struct$_PointsTransaction_$565_storage_$dyn_storage_ptr",
                 "typeString": "struct PointsTokenStorage.PointsTransaction[]"
               }
             },
@@ -1436,38 +1395,11 @@
           },
           {
             "constant": false,
-            "id": 588,
-            "name": "administrator",
-            "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1053:28:4",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_address",
-              "typeString": "address"
-            },
-            "typeName": {
-              "id": 587,
-              "name": "address",
-              "nodeType": "ElementaryTypeName",
-              "src": "1053:7:4",
-              "stateMutability": "nonpayable",
-              "typeDescriptions": {
-                "typeIdentifier": "t_address",
-                "typeString": "address"
-              }
-            },
-            "value": null,
-            "visibility": "public"
-          },
-          {
-            "constant": false,
-            "id": 592,
+            "id": 583,
             "name": "boolStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1118:45:4",
+            "scope": 604,
+            "src": "1081:45:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1475,28 +1407,28 @@
               "typeString": "mapping(bytes32 => bool)"
             },
             "typeName": {
-              "id": 591,
+              "id": 582,
               "keyType": {
-                "id": 589,
+                "id": 580,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "1126:7:4",
+                "src": "1089:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "1118:24:4",
+              "src": "1081:24:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
                 "typeString": "mapping(bytes32 => bool)"
               },
               "valueType": {
-                "id": 590,
+                "id": 581,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "1137:4:4",
+                "src": "1100:4:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -1508,11 +1440,11 @@
           },
           {
             "constant": false,
-            "id": 596,
+            "id": 587,
             "name": "intStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1172:46:4",
+            "scope": 604,
+            "src": "1135:46:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1520,28 +1452,28 @@
               "typeString": "mapping(bytes32 => int256)"
             },
             "typeName": {
-              "id": 595,
+              "id": 586,
               "keyType": {
-                "id": 593,
+                "id": 584,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "1180:7:4",
+                "src": "1143:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "1172:26:4",
+              "src": "1135:26:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_int256_$",
                 "typeString": "mapping(bytes32 => int256)"
               },
               "valueType": {
-                "id": 594,
+                "id": 585,
                 "name": "int256",
                 "nodeType": "ElementaryTypeName",
-                "src": "1191:6:4",
+                "src": "1154:6:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_int256",
                   "typeString": "int256"
@@ -1553,11 +1485,11 @@
           },
           {
             "constant": false,
-            "id": 600,
+            "id": 591,
             "name": "bytesStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1227:47:4",
+            "scope": 604,
+            "src": "1190:47:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1565,28 +1497,28 @@
               "typeString": "mapping(bytes32 => bytes)"
             },
             "typeName": {
-              "id": 599,
+              "id": 590,
               "keyType": {
-                "id": 597,
+                "id": 588,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "1235:7:4",
+                "src": "1198:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "1227:25:4",
+              "src": "1190:25:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_bytes_storage_$",
                 "typeString": "mapping(bytes32 => bytes)"
               },
               "valueType": {
-                "id": 598,
+                "id": 589,
                 "name": "bytes",
                 "nodeType": "ElementaryTypeName",
-                "src": "1246:5:4",
+                "src": "1209:5:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes_storage_ptr",
                   "typeString": "bytes"
@@ -1598,11 +1530,11 @@
           },
           {
             "constant": false,
-            "id": 604,
+            "id": 595,
             "name": "uintStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1283:48:4",
+            "scope": 604,
+            "src": "1246:48:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1610,28 +1542,28 @@
               "typeString": "mapping(bytes32 => uint256)"
             },
             "typeName": {
-              "id": 603,
+              "id": 594,
               "keyType": {
-                "id": 601,
+                "id": 592,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "1291:7:4",
+                "src": "1254:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "1283:27:4",
+              "src": "1246:27:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_uint256_$",
                 "typeString": "mapping(bytes32 => uint256)"
               },
               "valueType": {
-                "id": 602,
+                "id": 593,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
-                "src": "1302:7:4",
+                "src": "1265:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -1643,11 +1575,11 @@
           },
           {
             "constant": false,
-            "id": 608,
+            "id": 599,
             "name": "stringStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1340:49:4",
+            "scope": 604,
+            "src": "1303:49:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1655,28 +1587,28 @@
               "typeString": "mapping(bytes32 => string)"
             },
             "typeName": {
-              "id": 607,
+              "id": 598,
               "keyType": {
-                "id": 605,
+                "id": 596,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "1348:7:4",
+                "src": "1311:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "1340:26:4",
+              "src": "1303:26:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_string_storage_$",
                 "typeString": "mapping(bytes32 => string)"
               },
               "valueType": {
-                "id": 606,
+                "id": 597,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "1359:6:4",
+                "src": "1322:6:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
@@ -1688,11 +1620,11 @@
           },
           {
             "constant": false,
-            "id": 612,
+            "id": 603,
             "name": "addressStorage",
             "nodeType": "VariableDeclaration",
-            "scope": 613,
-            "src": "1398:51:4",
+            "scope": 604,
+            "src": "1361:51:4",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1700,28 +1632,28 @@
               "typeString": "mapping(bytes32 => address)"
             },
             "typeName": {
-              "id": 611,
+              "id": 602,
               "keyType": {
-                "id": 609,
+                "id": 600,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
-                "src": "1406:7:4",
+                "src": "1369:7:4",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
-              "src": "1398:27:4",
+              "src": "1361:27:4",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
                 "typeString": "mapping(bytes32 => address)"
               },
               "valueType": {
-                "id": 610,
+                "id": 601,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "1417:7:4",
+                "src": "1380:7:4",
                 "stateMutability": "nonpayable",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
@@ -1733,11 +1665,11 @@
             "visibility": "internal"
           }
         ],
-        "scope": 614,
-        "src": "180:1273:4"
+        "scope": 605,
+        "src": "180:1236:4"
       }
     ],
-    "src": "0:1453:4"
+    "src": "0:1416:4"
   },
   "compiler": {
     "name": "solc",
@@ -1745,7 +1677,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.16",
-  "updatedAt": "2019-09-29T20:35:42.407Z",
+  "updatedAt": "2019-10-01T20:12:16.803Z",
   "devdoc": {
     "details": "This contract holds all the necessary state variables to carry out the storage of any contract.\r",
     "methods": {},
