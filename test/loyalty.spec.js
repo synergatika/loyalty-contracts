@@ -32,17 +32,17 @@ contract("Proxy", (accounts) => {
                 const partnersInfoLength = await loyalty.partnersInfoLength();
                 assert.equal(partnersInfoLength, 0);
             })
-        })
+        });
 
         describe('Register a member', function () {
-            // it('success', async function () {
-            //     const result = await loyalty.registerMember();
-            //     assert.equal('0x01', result.receipt.status, 'valid proof creation');
-            // })
+            it('success', async function () {
+                const result = await loyalty.registerMember();
+                assert.equal('0x01', result.receipt.status, 'valid proof creation');
+            })
 
-            // it('revert', async function () {
-            //     await assertRevert(loyalty.registerMember());
-            // })
+            it('revert', async function () {
+                await assertRevert(loyalty.registerMember());
+            })
 
             it('success', async function () {
                 const result = await loyalty.registerMember({ from: accounts[1] });
@@ -57,28 +57,72 @@ contract("Proxy", (accounts) => {
                 const result = await loyalty.registerMember(accounts[2]);
                 assert.equal('0x01', result.receipt.status, 'valid proof creation');
             })
-        })
+        });
 
         describe('Register a Partner', function () {
             it('success', async function () {
-                const result = await loyalty.registerPartner();
+                const result = await loyalty.registerPartner(accounts[3]);
                 assert.equal('0x01', result.receipt.status, 'valid proof creation');
             })
 
             it('success', async function () {
-                const result = await loyalty.registerPartner(accounts[6]);
-                assert.equal('0x01', result.receipt.status, 'valid proof creation');
-            })
-
-            it('success', async function () {
-                const result = await loyalty.registerPartner(accounts[5]);
+                const result = await loyalty.registerPartner(accounts[4]);
                 assert.equal('0x01', result.receipt.status, 'valid proof creation');
             })
 
             it('revert', async function () {
-                await assertRevert(loyalty.registerPartner(accounts[5]));
+                await assertRevert(loyalty.registerPartner(accounts[4]));
             })
-        })
+            
+            it('revert', async function () {
+                await assertRevert(loyalty.registerPartner(accounts[5], { from: accounts[5] }));
+            })
+        });
 
+        describe('Earn & Redeem tokens', function () {
+            it('earn', async function () {
+                const result = await loyalty.earnPoints(100, accounts[3]);
+                assert.equal('0x01', result.receipt.status, 'valid proof creation');
+            });
+
+            it('returns 100', async function () {
+                const balance = await loyalty.members(accounts[0]);
+                assert.equal(100, balance.points.valueOf(), '100 points')
+            });
+
+            it('revert', async function () {
+                await assertRevert(loyalty.earnPoints(100, accounts[0]));
+                const balance = await loyalty.members(accounts[0]);
+                assert.equal(100, balance.points.valueOf(), '100 points')
+            });
+
+            it('revert', async function () {
+                await assertRevert(loyalty.earnPoints(100, accounts[0], { from: accounts[6] }));
+                const balance = await loyalty.members(accounts[6]);
+                assert.equal(0, balance.points.valueOf(), '100 points')
+            });
+
+            it('returns 1', async function () {
+                const transactionsInfoLength = await loyalty.transactionsInfoLength();
+                assert.equal(transactionsInfoLength, 1);
+            });
+
+            it('earn', async function () {
+                const result = await loyalty.usePoints(50, accounts[3]);
+                assert.equal('0x01', result.receipt.status, 'valid proof creation');                
+            });
+
+            it('returns 50', async function () {
+                const balance = await loyalty.members(accounts[0]);
+                assert.equal(50, balance.points.valueOf(), '50 points')
+            });
+
+            it('returns 2', async function () {
+                const transactionsInfoLength = await loyalty.transactionsInfoLength();
+                assert.equal(transactionsInfoLength, 2);
+            });
+
+
+        });
     });
 });

@@ -6,6 +6,15 @@ import './Ownable.sol';
 
 contract LoyaltyPoints is PointsTokenStorage, Ownable {
 
+    modifier newUser(address account) {
+        //check account in existing members
+        require(!members[account].isRegistered, "Account already registered as Member");
+
+        //check account in existing partners
+        require(!partners[account].isRegistered, "Account already registered as Partner");
+        _;
+    }
+
     function initialized() public view returns (bool) {
         return boolStorage[keccak256('loyalty_points_initialized')];
     }
@@ -21,35 +30,17 @@ contract LoyaltyPoints is PointsTokenStorage, Ownable {
     }
 
     //register sender as member
-    function registerMember (address member) public {
-        //check msg.sender in existing members
-        require(!members[member].isRegistered, "Account already registered as Member");
-
-        //check msg.sender in existing partners
-        require(!partners[member].isRegistered, "Account already registered as Partner");
-
+    function registerMember (address member) public newUser(member) {
         //add member account
         members[member] = Member(member, 0, true);
     }
 
-    function registerPartner () public {
-        registerPartner(msg.sender);
-    }
-
-    //register sender as partner
-    function registerPartner (address partner) public {
-        //check msg.sender in existing members
-        require(!members[partner].isRegistered, "Account already registered as Member");
-
-        //check msg.sender in existing partners
-        require(!partners[partner].isRegistered, "Account already registered as Partner");
-
+    function registerPartner (address partner) public onlyOwner newUser(partner)  {
         //add partner account
         partners[partner] = Partner(partner, true);
 
         //add partners info to be shared with members
         partnersInfo.push(Partner(partner, true));
-
     }
 
     //update member with points earned
