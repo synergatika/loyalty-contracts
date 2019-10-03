@@ -81,8 +81,8 @@ contract("Proxy", (accounts) => {
 
         describe('Earn & Redeem tokens', function () {
             it('earn', async function () {
-                const result = await loyalty.earnPoints(100, accounts[3]);
-                assert.equal('0x01', result.receipt.status, 'valid proof creation');
+                const result = await loyalty.earnPoints(100, accounts[0], accounts[3]);
+                assert.equal('0x01', result.receipt.status, 'valid transaction');
             });
 
             it('returns 100', async function () {
@@ -91,13 +91,13 @@ contract("Proxy", (accounts) => {
             });
 
             it('revert', async function () {
-                await assertRevert(loyalty.earnPoints(100, accounts[0]));
+                await assertRevert(loyalty.earnPoints(100, accounts[0], accounts[0]));
                 const balance = await loyalty.members(accounts[0]);
                 assert.equal(100, balance.points.valueOf(), '100 points')
             });
 
             it('revert', async function () {
-                await assertRevert(loyalty.earnPoints(100, accounts[0], { from: accounts[6] }));
+                await assertRevert(loyalty.earnPoints(100, accounts[0], accounts[3], { from: accounts[1] }));
                 const balance = await loyalty.members(accounts[6]);
                 assert.equal(0, balance.points.valueOf(), '100 points')
             });
@@ -108,7 +108,7 @@ contract("Proxy", (accounts) => {
             });
 
             it('earn', async function () {
-                const result = await loyalty.usePoints(50, accounts[3]);
+                const result = await loyalty.usePoints(50, accounts[0], accounts[3]);
                 assert.equal('0x01', result.receipt.status, 'valid proof creation');                
             });
 

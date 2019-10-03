@@ -15,6 +15,24 @@ contract LoyaltyPoints is PointsTokenStorage, Ownable {
         _;
     }
 
+    modifier isMember(address account) {
+        // only member can call
+        require(members[account].isRegistered, "Sender not registered as Member");
+        _;
+    }
+
+    modifier isPartners(address account) {
+        // verify partner address
+        require(partners[account].isRegistered, "Partner address not found");
+        _;
+    }
+
+    modifier hasPoints(address member, uint _points) {
+        // verify enough points for member
+        require(members[member].points >= _points, "Insufficient points");
+        _;
+    }
+
     function initialized() public view returns (bool) {
         return boolStorage[keccak256('loyalty_points_initialized')];
     }
@@ -44,45 +62,39 @@ contract LoyaltyPoints is PointsTokenStorage, Ownable {
     }
 
     //update member with points earned
-    function earnPoints (uint _points, address _partnerAddress) public {
-        // only member can call
-        require(members[msg.sender].isRegistered, "Sender not registered as Member");
-
-        // verify partner address
-        require(partners[_partnerAddress].isRegistered, "Partner address not found");
-
+    function earnPoints (uint _points, address _memberAddress, address _partnerAddress) public
+        onlyOwner
+        isMember(_memberAddress)
+        isPartners(_partnerAddress)
+    {
         // update member account
-        members[msg.sender].points = members[msg.sender].points + _points;
+        members[_memberAddress].points = members[_memberAddress].points + _points;
 
         // add transction
         transactionsInfo.push(PointsTransaction({
             points: _points,
             transactionType: TransactionType.Earned,
-            memberAddress: members[msg.sender].memberAddress,
+            memberAddress: members[_memberAddress].memberAddress,
             partnerAddress: _partnerAddress
         }));
 
     }
 
     //update member with points used
-    function usePoints (uint _points, address _partnerAddress) public {
-        // only member can call
-        require(members[msg.sender].isRegistered, "Sender not registered as Member");
-
-        // verify partner address
-        require(partners[_partnerAddress].isRegistered, "Partner address not found");
-
-        // verify enough points for member
-        require(members[msg.sender].points >= _points, "Insufficient points");
-
+    function usePoints (uint _points, address _memberAddress, address _partnerAddress) public
+        onlyOwner
+        isMember(_memberAddress)
+        isPartners(_partnerAddress)
+        hasPoints(_memberAddress, _points)
+    {
         // update member account
-        members[msg.sender].points = members[msg.sender].points - _points;
+        members[_memberAddress].points = members[_memberAddress].points - _points;
 
         // add transction
         transactionsInfo.push(PointsTransaction({
             points: _points,
             transactionType: TransactionType.Redeemed,
-            memberAddress: members[msg.sender].memberAddress,
+            memberAddress: members[_memberAddress].memberAddress,
             partnerAddress: _partnerAddress
         }));
     }
