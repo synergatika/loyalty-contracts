@@ -1,4 +1,4 @@
-# File: .github/workflows/repo-sync.yml
+name: Repo Sync
 
 on: push
 jobs:
@@ -8,7 +8,7 @@ jobs:
     - name: repo-sync
       uses: wei/git-sync@v1
       env:
-        SOURCE_REPO: "ssh://git@github.com:synergatika/loyalty-contracts.git"
+        SOURCE_REPO: "ssh://git@github.com/synergatika/loyalty-contracts.git"
         SOURCE_BRANCH: "master"
         DESTINATION_REPO: "ssh://git@ledger-git.dyne.org:2240/Synergy/loyalty-contracts.git"
         DESTINATION_BRANCH: "master"
