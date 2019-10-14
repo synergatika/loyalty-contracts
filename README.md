@@ -1,5 +1,7 @@
 # Loyalty Contract
 
+[![Build Status](https://travis-ci.org/synergatika/loyalty-contracts.svg?branch=master)](https://travis-ci.org/synergatika/loyalty-contracts)
+
 We use smart contract to keep track of points earned and redeem by a member of the Synergy Loyalty program. It's designed to be upgradeable to support future features.
 
 ## Model
