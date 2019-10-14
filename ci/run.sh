@@ -1,10 +1,18 @@
 #!/usr/bin/env sh
 set -x
 set -e
-npx ganache-cli -l 100000000 -m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat" > /dev/null &
+
+sudo apt install g++-7
+
+export CXX="g++-7"
+npm install -g npm@latest
+npm install -g ganache-cli truffle
+npm install 
+
+ganache-cli -l 100000000 -m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat" > /dev/null &
 TESTRPC_PID=$!
 trap "kill $TESTRPC_PID" EXIT INT TERM
 
-npx truffle compile
-npx truffle migrate
-npx truffle test
+truffle compile
+truffle migrate
+truffle test
