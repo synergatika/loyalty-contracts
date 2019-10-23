@@ -99,6 +99,24 @@ contract LoyaltyPoints is PointsTokenStorage, Ownable {
         }));
     }
 
+    //recover points
+    function recoverPoints (address _oldMemberAddress, address _newMemberAddress) public
+        onlyOwner
+        isMember(_oldMemberAddress)
+        isMember(_newMemberAddress)
+    {
+        // update member account
+        uint oldPoints = members[_oldMemberAddress].points;
+        members[_oldMemberAddress].points = 0;
+        members[_newMemberAddress].points = oldPoints;
+
+        // add transction
+        recoverActions.push(RecoverAction({
+            newMemberAddress: _newMemberAddress,
+            oldMemberAddress: _oldMemberAddress
+        }));
+    }
+
     //get length of transactionsInfo array
     function transactionsInfoLength() public view returns(uint256) {
         return transactionsInfo.length;

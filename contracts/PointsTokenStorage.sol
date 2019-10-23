@@ -32,6 +32,11 @@ contract PointsTokenStorage {
         address partnerAddress;
     }
 
+    struct RecoverAction {
+        address newMemberAddress;
+        address oldMemberAddress;
+    }
+
     //members and partners on the network mapped with their address
     mapping(address => Member) public members;
 
@@ -41,6 +46,8 @@ contract PointsTokenStorage {
     Partner[] public partnersInfo;
 
     PointsTransaction[] public transactionsInfo;
+
+    RecoverAction[] public recoverActions;
 
     // For future proposes
     mapping(bytes32 => bool) internal boolStorage;
