@@ -126,12 +126,12 @@ contract("Proxy", (accounts) => {
         describe('Recover account', function () {
             it('returns 0', async function () {
                 const balance = await loyalty.members(accounts[5]);
-                assert.equal(0, balance.points.valueOf(), '0 points')
+                assert.equal(0, balance.points.valueOf(), '0 points');
             });
 
             it('returns 50', async function () {
                 const balance = await loyalty.members(accounts[0]);
-                assert.equal(50, balance.points.valueOf(), '50 points')
+                assert.equal(50, balance.points.valueOf(), '50 points');
             });
 
             it('success', async function () {
@@ -146,12 +146,18 @@ contract("Proxy", (accounts) => {
 
             it('returns 50', async function () {
                 const balance = await loyalty.members(accounts[5]);
-                assert.equal(50, balance.points.valueOf(), '50 points')
+                assert.equal(50, balance.points.valueOf(), '50 points');
             });
 
             it('returns 0', async function () {
                 const balance = await loyalty.members(accounts[0]);
-                assert.equal(0, balance.points.valueOf(), '50 points')
+                assert.equal(0, balance.points.valueOf(), '50 points');
+            });
+
+            it('returns recoverActions[0', async function () {
+                const balance = await loyalty.recoverActions(0);
+                assert.equal(accounts[5], balance.newMemberAddress.valueOf(), 'Retrieve newMemberAddress');
+                assert.equal(accounts[0], balance.oldMemberAddress.valueOf(), 'Retrieve oldMemberAddress');
             });
 
         });
