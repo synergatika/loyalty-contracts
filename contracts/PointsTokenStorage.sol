@@ -26,6 +26,7 @@ contract PointsTokenStorage {
     }
 
     struct PointsTransaction {
+        uint timestamp;
         uint points;
         TransactionType transactionType;
         address memberAddress;

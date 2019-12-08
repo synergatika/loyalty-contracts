@@ -8,28 +8,28 @@ contract LoyaltyPoints is PointsTokenStorage, Ownable {
 
     modifier newUser(address account) {
         //check account in existing members
-        require(!members[account].isRegistered, "Account already registered as Member");
+        require(!members[account].isRegistered, "Account already registered as Member.");
 
         //check account in existing partners
-        require(!partners[account].isRegistered, "Account already registered as Partner");
+        require(!partners[account].isRegistered, "Account already registered as Partner.");
         _;
     }
 
     modifier isMember(address account) {
         // only member can call
-        require(members[account].isRegistered, "Sender not registered as Member");
+        require(members[account].isRegistered, "Sender not registered as Member.");
         _;
     }
 
     modifier isPartners(address account) {
         // verify partner address
-        require(partners[account].isRegistered, "Partner address not found");
+        require(partners[account].isRegistered, "Partner address not found.");
         _;
     }
 
     modifier hasPoints(address member, uint _points) {
         // verify enough points for member
-        require(members[member].points >= _points, "Insufficient points");
+        require(members[member].points >= _points, "Insufficient points.");
         _;
     }
 
@@ -38,9 +38,18 @@ contract LoyaltyPoints is PointsTokenStorage, Ownable {
     }
 
     function initialize(address newAdministrator) public {
-        require(!initialized(), 'Initialization already executed');
+        require(!initialized(), 'Initialization already executed.');
         setOwner(newAdministrator);
         boolStorage[keccak256('loyalty_points_initialized')] = true;
+        uintStorage[keccak256('loyalty_score_timespan')] = 0;
+    }
+
+    function setScoreTimespan(uint256 scoreTimespan) public {
+        uintStorage[keccak256('loyalty_score_timespan')] = scoreTimespan;
+    }
+
+    function getScoreTimespan() public view returns(uint256) {
+        return uintStorage[keccak256('loyalty_score_timespan')];
     }
 
     function registerMember () public {
@@ -73,6 +82,7 @@ contract LoyaltyPoints is PointsTokenStorage, Ownable {
         // add transction
         transactionsInfo.push(PointsTransaction({
             points: _points,
+            timestamp: block.timestamp,
             transactionType: TransactionType.Earned,
             memberAddress: members[_memberAddress].memberAddress,
             partnerAddress: _partnerAddress
@@ -93,6 +103,7 @@ contract LoyaltyPoints is PointsTokenStorage, Ownable {
         // add transction
         transactionsInfo.push(PointsTransaction({
             points: _points,
+            timestamp: block.timestamp,
             transactionType: TransactionType.Redeemed,
             memberAddress: members[_memberAddress].memberAddress,
             partnerAddress: _partnerAddress
@@ -115,6 +126,27 @@ contract LoyaltyPoints is PointsTokenStorage, Ownable {
             newMemberAddress: _newMemberAddress,
             oldMemberAddress: _oldMemberAddress
         }));
+    }
+
+    function getLoyaltyScore(address _member) external view returns (uint) {
+        uint256 timespan = getScoreTimespan();
+        uint result = 0;
+
+        for (uint i = 0; i < transactionsInfo.length; i++) {
+            if (block.timestamp - transactionsInfo[i].timestamp > timespan) {
+                continue;
+            }
+
+            if (transactionsInfo[i].transactionType == TransactionType.Redeemed)
+            {
+                continue;
+            }
+
+            if (transactionsInfo[i].memberAddress == _member) {
+                result = result + transactionsInfo[i].points;
+            }
+        }
+        return result;
     }
 
     //get length of transactionsInfo array

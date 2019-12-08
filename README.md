@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/synergatika/loyalty-contracts.svg?branch=master)](https://travis-ci.org/synergatika/loyalty-contracts)
 [![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat)](https://raw.githubusercontent.com/synergatika/loyalty-contracts/master/LICENSE)
 
-We use smart contract to keep track of points earned and redeem by a member of the Synergy Loyalty program. It's designed to be upgradeable to support future features.
+We use Loyalty smart contract to keep track of points earned and redeem by a member of the Synergy Loyalty program. Besides, we hold for each Member a score on how loyal he or she is.  It's designed to be upgradeable to support future features. 
 
 ## Model
 
@@ -40,6 +40,7 @@ We use smart contract to keep track of points earned and redeem by a member of t
 | Type            | Name            |
 | --------------- | --------------- |
 | uint            | points          |
+| uint            | timestamp       |
 | address         | partnerAddress  |
 | address         | memberAddress   |
 | TransactionType | transactionType |
