@@ -150,7 +150,7 @@ contract("Proxy", (accounts) => {
                 assert.equal(50, balance.points.valueOf(), '50 points')
 
                 const score = await loyalty.getLoyaltyScore(accounts[0])
-                assert.equal(0, score.valueOf(), '100 points')
+                assert.equal(100, score.valueOf(), '100 points')
             })
         })
 
