@@ -24,20 +24,20 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/synaphea/contracts#readme",
   "devDependencies": {
-    "ganache-cli": "6.7.0",
-    "solc": "0.5.11",
-    "solhint": "2.2.0",
-    "solium": "1.2.5",
+    "ganache-cli": "^6.7.0",
+    "solc": "^0.5.11",
+    "solhint": "^2.2.0",
+    "solium": "^1.2.5",
     "truffle": "5.0.37"
   },
   "dependencies": {
-    "eth-gas-reporter": "0.2.11",
-    "eth-sig-util": "1.4.2",
-    "truffle-hdwallet-provider": "1.0.17",
+    "braces": ">=2.3.1",
+    "eth-gas-reporter": "^0.2.11",
+    "eth-sig-util": "^1.4.2",
+    "mem": "^6.1.0",
+    "truffle-hdwallet-provider": "^1.0.17",
     "web3-eth": "1.2.1",
-    "winston": "3.2.1",
-    "zeppelin-solidity": "1.12.0",
-    "mem": ">=4.0.0",
-    "braces": ">=2.3.1"
+    "winston": "^3.2.1",
+    "zeppelin-solidity": "1.12.0"
   }
 }
