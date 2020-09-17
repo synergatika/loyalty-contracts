@@ -6,6 +6,10 @@ module.exports = {
     solc: {
       settings: {
         evmVersion: "byzantium"
+      },
+      optimizer: {
+        enabled: true,
+        runs: 200
       }
     }
   },
@@ -22,11 +26,11 @@ module.exports = {
       network_id: "*" // Match any network id
     },
     production: {
-      host: "95.216.92.152",
+      host: "localhost",
       port: 22000, // was 8545
       network_id: "*", // Match any network id
       gasPrice: 0,
-      gas: 10000000,
+      // gas: 10000000,
       type: "quorum" // needed for Truffle to support Quorum
     }
   }
