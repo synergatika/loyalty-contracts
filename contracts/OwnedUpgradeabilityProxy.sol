@@ -3,6 +3,7 @@ pragma solidity >=0.5.8 <0.6.0;
 
 import './UpgradeabilityProxy.sol';
 import './UpgradeabilityOwnerStorage.sol';
+import './ILoyaltyPoints.sol';
 
 /**
  * @title OwnedUpgradeabilityProxy
@@ -63,12 +64,12 @@ contract OwnedUpgradeabilityProxy is UpgradeabilityOwnerStorage, UpgradeabilityP
    * to initialize whatever is needed through a low level call.
    * @param version representing the version name of the new implementation to be set.
    * @param implementation representing the address of the new implementation to be set.
-   * @param data represents the msg.data to bet sent in the low level call. This parameter may include the function
-   * signature of the implementation to be called with the needed payload
+   * @param newAdministrator new Administrator
    */
-  function upgradeToAndCall(string memory version, address implementation, bytes memory data) public payable onlyProxyOwner {
+  function upgradeToAndCall(string memory version, address implementation, address newAdministrator) public payable onlyProxyOwner {
     upgradeTo(version, implementation);
     address payable implCon = address(uint160(address(this)));
-    implCon.call.value(msg.value)(data);
+    ILoyaltyPoints(implCon).initialize(newAdministrator);
+
   }
 }

@@ -4,6 +4,7 @@ pragma solidity >=0.5.8 <0.6.0;
 import './PointsTokenStorage.sol';
 import './Ownable.sol';
 import "./OwnedUpgradeabilityProxy.sol";
+import './ILoyaltyPoints.sol';
 
 /**
  * @title EternalStorageProxy
@@ -14,7 +15,7 @@ import "./OwnedUpgradeabilityProxy.sol";
 contract PointsTokenStorageProxy is PointsTokenStorage, OwnedUpgradeabilityProxy {}
 
 
-contract LoyaltyPoints is PointsTokenStorage, Ownable {
+contract LoyaltyPoints is PointsTokenStorage, Ownable, ILoyaltyPoints {
 
     modifier newUser(address account) {
         //check account in existing members

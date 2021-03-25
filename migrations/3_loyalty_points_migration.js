@@ -15,9 +15,9 @@ module.exports = function (deployer, network, accounts) {
         return instance;
     })
     .then((proxy) => {
-        const methodId = abi.methodID('initialize', ['address']).toString('hex');
-        const params = abi.rawEncode(['address'], [accounts[0]]).toString('hex');
-        const initializeData = '0x' + methodId + params;
-        return proxy.upgradeToAndCall('0', loyalty.address, initializeData, { from: accounts[0] });
+        // const methodId = abi.methodID('initialize', ['address']).toString('hex');
+        // const params = abi.rawEncode(['address'], [accounts[0]]).toString('hex');
+        // const initializeData = '0x' + methodId + params;
+        return proxy.upgradeToAndCall('0', loyalty.address, accounts[0], { from: accounts[0] });
     });
 };
