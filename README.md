@@ -7,11 +7,49 @@ We use Loyalty smart contract to keep track of points earned and redeem by a mem
 
 ## Getting started
 
+### Development steps
+
+```
+# Install package
+$ npm install
+
+# Start the Ethereum emulator
+$ npx ganache-cli --gasPrice 0 -l 100000000 -m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
+
+# Then open a new terminal, first run the contracts migrations
+$ px truffle migrate
+
+# Last, run all the tests
+$ npx truffle test
+```
+
+### Go to production 
+
+```
+
+# Update your settings on truffle-config.js according your prouduction enviroment. e.g., mine was: 
+# 
+#    production: {
+#      host: "localhost",
+#      port: 22000, // was 8545
+#      network_id: "*", // Match any network id
+#      gasPrice: 0,
+#      // gas: 10000000,
+#      type: "quorum" // needed for Truffle to support Quorum
+#    }
+
+$ npx truffle migrate --network production
+
+# Now, you can run tests into the production
+
+$ npx truffle test --network production
+```
+
 ## Model
 
-### Entities
+The description of every structure is used by the Loyalty Contract.
 
-**Member (Participant)** 
+**Member (Participant)**: it is represents a buyer in the loyalty network.
 
 | Type    | Name            |
 | ------- | --------------- |
@@ -19,25 +57,21 @@ We use Loyalty smart contract to keep track of points earned and redeem by a mem
 | uint    | points          |
 | bool    | isRegistered    |
 
-**Partner (Participant)** 
+**Partner (Participant)**: it is represents a COOP company which offers discounts or perks in the loyalty network.
 
 | Type    | Name            |
 | ------- | --------------- |
 | address | partnerAddress  |
 | bool    | isRegistered    |
 
-### Types
-
-**TransactionType (Enum)** 
+**TransactionType (Enum)**: it is the type of transaction, a buyer either can earn or redeem points.
 
 | Options    |
 | ---------- | 
 | Earned     | 
 | Redeemed   | 
 
-### Transaction
-
-**PointsTransaction (Transaction)** 
+**PointsTransaction (Transaction)**: it is the description of every transaction in the loyalty network.
 
 | Type            | Name            |
 | --------------- | --------------- |
@@ -46,6 +80,12 @@ We use Loyalty smart contract to keep track of points earned and redeem by a mem
 | address         | partnerAddress  |
 | address         | memberAddress   |
 | TransactionType | transactionType |
+
+**RecoverAction (Wallet)**: in case of lost digital wallet we provide the option to recover your loyalty point, with this structure we keep track every recovery try.
+| Type            | Name            |
+| --------------- | --------------- |
+| newMemberAddress| address         |
+| oldMemberAddress| address         |
 
 ## Reference 
 
