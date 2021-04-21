@@ -5,6 +5,8 @@
 
 We use Loyalty smart contract to keep track of points earned and redeem by a member of the Synergy Loyalty program. Besides, we hold for each Member a score on how loyal he or she is.  It's designed to be upgradeable to support future features. 
 
+## Getting started
+
 ## Model
 
 ### Entities
