@@ -45,7 +45,9 @@ $ npx truffle migrate --network production
 $ npx truffle test --network production
 ```
 
-## Model
+## Contract Interface
+
+### Model
 
 The description of every structure is used by the Loyalty Contract.
 
@@ -86,6 +88,40 @@ The description of every structure is used by the Loyalty Contract.
 | --------------- | --------------- |
 | newMemberAddress| address         |
 | oldMemberAddress| address         |
+
+### Methods
+
+**initialized()**: return contract status.
+
+**initialize(address newAdministrator)**:
+
+**setScoreTimespan(uint256 scoreTimespan)**:
+
+**getScoreTimespan()**:
+
+**registerMember(address member)**:
+
+**registerPartner(address partner)**:
+
+**earnPoints (uint _points, address _memberAddress, address _partnerAddress)**:
+
+**usePoints (uint _points, address _memberAddress, address _partnerAddress)**:
+
+**recoverPoints (address _oldMemberAddress, address _newMemberAddress)**:
+
+**getLoyaltyScore(address _member)**:
+
+**transactionsInfoLength()**:
+
+**partnersInfoLength()**:
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
 
 ## Reference 
 

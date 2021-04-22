@@ -63,9 +63,9 @@ contract LoyaltyPoints is PointsTokenStorage, Ownable, ILoyaltyPoints {
         return uintStorage[keccak256('loyalty_score_timespan')];
     }
 
-    function registerMember () public {
-        registerMember(msg.sender);
-    }
+    // function registerMember () public {
+    //     registerMember(msg.sender);
+    // }
 
     //register sender as member
     function registerMember (address member) public newUser(member) {
